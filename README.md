@@ -286,6 +286,9 @@ La extension de selenium webDriver
         Thread.sleep(1000);
         
     }
+    
+    
+    
     @After
     public void turdown() {
         driver.quit();
@@ -293,6 +296,105 @@ La extension de selenium webDriver
 	
 }
 
+// 7 HORARIO MEDICOS
 
+
+
+By HoraiosLinkLocator = By.linkText("Horarios");
+	By registerHorariosMedicosLinkLocator = By.linkText("Horarios Medicos");
+	By registerAgregarHorarioLinkLocator = By.linkText("Agregar Horario");
+	
+
+
+WebElement buscar = driver.findElement(By.name("LoginUser$UserName"));
+
+		buscar.sendKeys("security");
+		
+		WebElement buscar1 = driver.findElement(By.name("LoginUser$Password"));
+		
+		buscar1.sendKeys("security");
+
+		Thread.sleep(1500);
+		
+		WebElement btnbuscar = driver.findElement(By.name("LoginUser$btnIngresar"));
+		
+		btnbuscar.click();
+		
+		Thread.sleep(1500);
+		
+
+
+		driver.findElement(HoraiosLinkLocator).click();
+
+		Thread.sleep(2000);
+		
+		driver.findElement(registerHorariosMedicosLinkLocator).click();
+		Thread.sleep(2000);
+		
+		
+		Thread.sleep(2000);
+		
+		WebElement buscar2 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$txtDNI"));
+
+		buscar2.sendKeys("11799080");
+		
+		Thread.sleep(2000);
+		
+		WebElement buscar11 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$btnBuscar"));
+
+		buscar11.click();
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(registerAgregarHorarioLinkLocator).click();
+
+		Thread.sleep(2000);
+		WebElement buscar6 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$txtFecha"));
+
+		buscar6.sendKeys("1272020");
+		Thread.sleep(2000);
+		
+		WebElement buscar8 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$txtHoraInicio"));
+		buscar8.clear();
+		
+		Thread.sleep(2000);
+		
+		buscar8.sendKeys("10:00");
+		Thread.sleep(2000);
+		
+		WebElement buscar13 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$btnAgregar"));
+
+		buscar13.click();
+
+
+
+
+
+
+// 8 Horario Enfermeras
+
+driver.findElement(HoraiosLinkLocator).click();
+
+		Thread.sleep(2000);
+		
+		driver.findElement(registerHorariosEnfermerasLinkLocator).click();
+		Thread.sleep(2000);
+WebElement buscar2 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$txtDNI"));
+
+		buscar2.sendKeys("11799080");
+		
+		Thread.sleep(2000);
+
+WebElement buscar14 = driver.findElement(By.name("agregarhorario"));
+
+		buscar14.click();
+WebElement buscar6 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$txtFecha"));
+
+		buscar6.sendKeys("1272020");
+		Thread.sleep(2000);
+
+WebElement buscar13 = driver.findElement(By.name("ctl00$ContentPlaceHolder1$btnAgregar"));
+
+		buscar13.click();
 
 
